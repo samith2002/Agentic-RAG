@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-const SERP_API_KEY = 'e2d89079688035f02e3924e121c452e81f0817d543a664cb22b15dd077196427';
+const SERP_API_KEY = 'API KEY';
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "views", "index.html"));
