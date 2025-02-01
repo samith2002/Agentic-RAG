@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Q&A</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .search-result {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .search-result:last-child {
+            border-bottom: none;
+        }
+        .result-url {
+            color: #006621;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        .result-snippet {
+            color: #545454;
+            margin-top: 8px;
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-left: 0.5rem;
+            vertical-align: text-bottom;
+            border: 0.2em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border .75s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Ask Gemini About Paul Graham</h1>
+        
+        <!-- Search Input Card -->
+        <div class="card p-4 mt-3">
+            <div class="form-group mb-3">
+                <label for="queryInput">Enter your question:</label>
+                <input type="text" class="form-control" id="queryInput" placeholder="Type your question here...">
+            </div>
+            <button class="btn btn-primary btn-block" id="queryButton">
+                Submit
+                <span class="loading-spinner d-none"></span>
+            </button>
+        </div>
+
+        <!-- Web Search Toggle -->
+        <div class="form-group mt-3">
+            <button class="btn btn-secondary" id="webSearchButton">
+                <i class="fa-solid fa-globe"></i> Web Search
+            </button>
+            <span id="searchStatus" class="ml-2 text-muted">Web Search Off</span>
+        </div>
+
+        <!-- Response Section -->
+        <div class="card mt-4">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">Response:</h5>
+            </div>
+            <div class="card-body">
+                <div id="responseText">
+                    <!-- Search results will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
